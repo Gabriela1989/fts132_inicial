@@ -103,10 +103,20 @@ def testar_calcular_area_do_triangulo():
 
     assert resultado_atual == resultado_esperado
 
-def testar_calcular_area_do_circulo():
+#anotação para utilizar como massa de teste
+@pytest.mark.parametrize ('raio,resultado_esperado',[
+                              # valores
+                              (1,3.14 ), # teste n 1
+                              (2,12.56), # teste n 2
+                              (3,28.26), # teste n 3
+                              (4,50.24), # teste n 4
+                              ('a' , 'Falha no cálculo - Raio não é um número'), # teste n 5
+                              (' ' , 'Falha no cálculo - Raio não é um número'), # teste n 6
+                        ])
+def testar_calcular_area_do_circulo(raio, resultado_esperado):
 
-    raio = 2
-    resultado_esperado = 12.56
+    #raio = 2
+    #resultado_esperado = 12.56
     resultado_atual = calcular_area_do_circulo(raio)
 
     assert resultado_atual == resultado_esperado
