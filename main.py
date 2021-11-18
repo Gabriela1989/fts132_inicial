@@ -1,6 +1,6 @@
 import pytest
 
-# Definições
+## Definições
 def somar_dois_numeros(num1, num2):
     return num1 + num2
 
@@ -34,6 +34,9 @@ def calcular_area_do_circulo(raio):
     except TypeError:
         return 'Falha no cálculo - Raio não é um número'
 
+def calcular_volume_do_paralelograma(largura, comprimento, altura):
+    return largura * comprimento * altura
+
 # Requisições
 
 if __name__ == '__main__':
@@ -62,6 +65,9 @@ if __name__ == '__main__':
     print(f'A área do triangulo é {resultado}')
 
     resultado = calcular_area_do_circulo(5)
+    print(f'A área do circulo é {resultado}')
+
+    resultado = calcular_volume_do_paralelograma(5,5,5)
     print(f'A área do circulo é {resultado}')
 
 
